@@ -1,0 +1,39 @@
+Menu
+{
+	Owner: Dawid
+	Name: "xyz"
+	Days:
+	[
+		Day
+		{
+			Name: "Monday"
+			Meals
+			{
+				Meal
+				{
+					Type: "Kolacja"
+					Dishes: 
+					[
+						Dish
+						{	
+							Name: Hummus - domowy z czernuszką - I porcja
+							Description: "how to do"
+							Ingredients: 
+							[
+								{
+									Name: Czosnek
+									Amount: 2
+									Measure: grams
+									Count: 1/3
+								}
+								...
+							]
+							...
+						}
+					]	
+				}
+			}
+		}
+		...
+	]
+}
