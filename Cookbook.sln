@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.32112.339
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CookbookService", "src\CookbookService\CookbookService.csproj", "{07972A76-6DAD-4492-AEE3-CC7B5A9DB175}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CookbookService.API", "src\CookbookService\CookbookService.API.csproj", "{07972A76-6DAD-4492-AEE3-CC7B5A9DB175}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CookbookService.Domain", "src\CookbookService.Domain\CookbookService.Domain.csproj", "{0B5A7C8B-BB18-4FA0-B7C1-E028E552FC2F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CookbookService.Application", "src\CookbookService.Application\CookbookService.Application.csproj", "{59661B9A-0CB6-410D-AFAC-37487B255A43}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CookbookService.Infrastrructure", "src\CookbookService.Application\CookbookService.Infrastrructure.csproj", "{59661B9A-0CB6-410D-AFAC-37487B255A43}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -5,7 +5,7 @@ namespace CookbookService.Infrastrructure.EntityFramework
 {
 	public class DatabaseContext : DbContext
 	{
-		private readonly string _connectionString = "Server=localhost,1433;database=RestaurantDb;user id=sa;pwd=yourStrong(!)Password;";
+		private readonly string _connectionString = "Server=localhost,1433;database=Cookbook;user id=sa;pwd=yourStrong(!)Password;";
 
 		public DbSet<MenuEntity> Menus { get; set; }
 		public DbSet<DayEntity> Days { get; set; }
@@ -15,7 +15,11 @@ namespace CookbookService.Infrastrructure.EntityFramework
 
 		protected override void OnModelCreating(ModelBuilder modelBuilder)
 		{
-
+			OnMenuCreating(modelBuilder);
+			OnDayCreating(modelBuilder);
+			OnMealCreating(modelBuilder);
+			OnDishCreating(modelBuilder);
+			OnIngredientCreating(modelBuilder);
 		}
 
 		protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -38,9 +42,37 @@ namespace CookbookService.Infrastrructure.EntityFramework
 				.HasMaxLength(50);
 		}
 
-		private static void DaysCreating(ModelBuilder modelBuilder)
+		private static void OnDayCreating(ModelBuilder modelBuilder)
 		{
+			var entity = modelBuilder.Entity<DayEntity>();
+			entity.Property(e => e.DayOfWeek)
+				.IsRequired();
+		}
 
+		private static void OnMealCreating(ModelBuilder modelBuilder)
+		{
+			var entity  = modelBuilder.Entity<MealEntity>();
+			entity.Property(e => e.Type)
+				.IsRequired();
+		}
+
+		private static void OnDishCreating(ModelBuilder modelBuilder)
+		{
+			var entity = modelBuilder.Entity<DishEntity>();
+			entity.Property(e => e.Name)
+				.IsRequired()
+				.HasMaxLength(50);
+
+			entity.Property(e => e.Description)
+				.HasMaxLength(255);
+		}
+
+		private static void OnIngredientCreating(ModelBuilder modelBuilder)
+		{
+			var entity = modelBuilder.Entity<IngredientEntity>();
+			entity.Property(e => e.Name)
+				.IsRequired()
+				.HasMaxLength(50);
 		}
 	}
 }
