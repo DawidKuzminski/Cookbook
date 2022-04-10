@@ -1,8 +1,8 @@
 ﻿using CookbookService.Domain.Abstractions;
 
-namespace CookbookService.Domain
+namespace CookbookService.API.Access.Commands
 {
-	public class IngredientEntity : BaseEntity, IIngredient
+	public class CreateIngredientCommand : IIngredient
 	{
 		public string Name { get; set; }
 		public int Amount { get; set; }
