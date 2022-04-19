@@ -1,7 +1,6 @@
 using CookbookService.Domain;
 using CookbookService.Domain.Options;
 using CookbookService.Infrastrructure.Abstractions;
-using CookbookService.Infrastrructure.EntityFramework;
 using CookbookService.Infrastrructure.LiteDb;
 using MediatR;
 using System.Reflection;
@@ -13,6 +12,7 @@ builder.Services.Configure<LiteDbOptions>(configuration.GetSection(LiteDbOptions
 
 // Add services to the container.
 builder.Services.AddControllers();
+builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 //builder.Services.AddDbContext<DatabaseContext>();
 builder.Services.AddSingleton<IRepository<MenuEntity>, LiteDbContext<MenuEntity>>();
 
