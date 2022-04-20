@@ -2,11 +2,11 @@
 
 namespace CookbookService.Domain
 {
-	public class IngredientEntity : BaseEntity, IIngredient
+	public class IngredientEntity : BaseEntity
 	{
-		public string Name { get; set; }
-		public int Amount { get; set; }
-		public string Measure { get; set; }
-		public int Count { get; set; }
+		public string Name { get; init; }
+		public int Amount { get; init; }
+		public string Measure { get; init; }
+		public int Count { get; init; }
 	}
 }
