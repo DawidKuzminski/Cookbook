@@ -11,6 +11,8 @@ namespace CookbookService.API.Common.Mappings
 		{
 			CreateMap<AddMenuCommand, MenuEntity>()
 				.ForAllMembers(o => o.Condition((src, dest, value) => value != null));
+			CreateMap<MenuDTO, MenuEntity>()
+				.ForAllMembers(o => o.Condition((src, dest, value) => value != null));
 			CreateMap<DayDTO, DayEntity>()
 				.ForAllMembers(o => o.Condition((src, dest, value) => value != null));
 			CreateMap<MealDTO, MealEntity>()
@@ -18,6 +20,17 @@ namespace CookbookService.API.Common.Mappings
 			CreateMap<DishDTO, DishEntity>()
 				.ForAllMembers(o => o.Condition((src, dest, value) => value != null));
 			CreateMap<IngredientDTO, IngredientEntity>()
+				.ForAllMembers(o => o.Condition((src, dest, value) => value != null));
+
+			CreateMap<MenuEntity, MenuDTO>()
+				.ForAllMembers(o => o.Condition((src, dest, value) => value != null));
+			CreateMap<DayEntity, DayDTO>()
+				.ForAllMembers(o => o.Condition((src, dest, value) => value != null));
+			CreateMap<MealEntity, MealDTO>()
+				.ForAllMembers(o => o.Condition((src, dest, value) => value != null));
+			CreateMap<DishEntity, DishDTO>()
+				.ForAllMembers(o => o.Condition((src, dest, value) => value != null));
+			CreateMap<IngredientEntity, IngredientDTO>()
 				.ForAllMembers(o => o.Condition((src, dest, value) => value != null));
 		}
 	}

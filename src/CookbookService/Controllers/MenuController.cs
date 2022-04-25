@@ -1,4 +1,5 @@
 ﻿using CookbookService.API.Access.Commands;
+using CookbookService.API.Access.Queries;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
@@ -17,9 +18,13 @@ namespace CookbookService.API.Controllers
 		[HttpPost]
 		public ActionResult Create([FromBody] AddMenuCommand request)
 		{
-			_mediator.Send(request);
+			return Ok(_mediator.Send(request));
+		}
 
-			return NoContent();
+		[HttpGet("{id}")]
+		public async Task<IActionResult> GetById([FromRoute] int id)
+		{
+			return Ok(await _mediator.Send(new GetMenuByIdQuery { Id = id }));
 		}
 	}
 }

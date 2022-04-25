@@ -14,9 +14,9 @@ namespace CookbookService.Infrastrructure.LiteDb
 			_database = new LiteDatabase(settings.Value.DatabaseLocation);
 		}
 
-		public TEntity GetById(int id)
+		public async Task<TEntity> GetByIdAsync(int id)
 		{
-			throw new NotImplementedException();
+			return await Task.FromResult(_database.GetCollection<TEntity>().FindById(id));
 		}
 
 		public IEnumerable<TEntity> GetAll()

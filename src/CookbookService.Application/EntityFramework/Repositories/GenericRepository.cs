@@ -24,9 +24,9 @@ namespace CookbookService.Infrastrructure.EntityFramework.Repositories
 			throw new NotImplementedException();
 		}
 
-		public TEntity GetById(int id)
+		public async Task<TEntity> GetByIdAsync(int id)
 		{
-			return _dbSet.Find(id);
+			return await _dbSet.FindAsync(id);
 		}
 
 		public IEnumerable<TEntity> GetAll()
